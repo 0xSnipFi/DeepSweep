@@ -1,0 +1,45 @@
+name: release
+
+# Push a version tag (e.g. v2.0.0) to build the exe and publish a downloadable
+# GitHub Release automatically.
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt pyinstaller
+
+      - name: Build exe
+        run: python packaging/build_exe.py
+
+      - name: Publish Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/DeepSweep.exe
+          generate_release_notes: true
+          name: DeepSweep ${{ github.ref_name }}
+          body: |
+            ## DeepSweep ${{ github.ref_name }}
+
+            **Download `DeepSweep.exe` below and run it — no Python or install needed.**
+
+            For full access to system temp/log locations, right-click the exe →
+            **Run as administrator**. Read the safety notes before deleting:
+            https://github.com/0xSnipFi/DeepSweep/blob/main/docs/SAFETY.md

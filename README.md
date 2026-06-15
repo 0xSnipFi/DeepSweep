@@ -15,6 +15,18 @@ protected; only safe junk files are removed.
 
 ---
 
+## ⬇️ Download
+
+**[Download the latest `DeepSweep.exe` →](https://github.com/0xSnipFi/DeepSweep/releases/latest)**
+
+No Python, no install — just download and double-click. For full access to system
+temp/log locations, right-click → **Run as administrator**.
+
+> Windows SmartScreen may warn on first run (the exe is unsigned). Click
+> **More info → Run anyway**.
+
+---
+
 ## ✨ Features
 
 - **Deep Scan** — walks up to 12 levels deep through known junk locations:
