@@ -40,7 +40,7 @@ protected; only safe junk files are removed.
 
 ### Run from source
 ```bash
-git clone https://github.com/<you>/DeepSweep.git
+git clone https://github.com/0xSnipFi/DeepSweep.git
 cd DeepSweep
 pip install -r requirements.txt
 python -m deepsweep

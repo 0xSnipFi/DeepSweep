@@ -6,7 +6,7 @@ contributions are easy to review.
 ## Setup
 
 ```bash
-git clone https://github.com/<you>/DeepSweep.git
+git clone https://github.com/0xSnipFi/DeepSweep.git
 cd DeepSweep
 python -m venv .venv && .venv\Scripts\activate
 pip install -r requirements.txt
